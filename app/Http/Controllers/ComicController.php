@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\comic;
 use Illuminate\Http\Request;
 
-class TestController extends Controller
+class ComicController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,9 @@ class TestController extends Controller
      */
     public function index()
     {
-        //
+        // voglio tutta la stampa dei fumetti
+        $comics = comic::all();
+        return view('comic.index', compact('comics'));
     }
 
     /**
