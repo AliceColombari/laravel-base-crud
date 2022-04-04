@@ -11,7 +11,7 @@
     <table class="table">
 
         <thead>
-          <tr>
+          <tr class="bg-primary">
             <th scope="col">ID</th>
             <th scope="col">Titolo</th>
             <th scope="col">Serie</th>
@@ -19,7 +19,8 @@
             <th scope="col">Tipologia</th>
             <th scope="col">Uscita</th>
             <th scope="col">Prezzo</th>
-            <th scope="col">Descrizione</th>
+            {{-- <th scope="col">Descrizione</th> --}}
+            <th scope="col">Azioni</th>
           </tr>
         </thead>
 
@@ -33,7 +34,7 @@
                 <td>{{$comic->type}}</td>
                 <td>{{$comic->sale_date}}</td>
                 <td>{{$comic->price}}</td>
-                <td>{{$comic->description}}</td>
+                {{-- <td>{{$comic->description}}</td> --}}
                 <td>
                     <a role="button" class="btn btn-primary" href="{{route('comic.show', $comic->id)}}">Vedi</a>
                 </td>
