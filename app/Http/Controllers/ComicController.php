@@ -71,17 +71,16 @@ class ComicController extends Controller
     public function show($id)
     {
         //
-        // $comic = Comic::find($id);
+     
+        $comic = Comic::find($id);
       
-        // if($comic){
-
-        //     return view("comic.show", compact("comic"));
-
-        // } else {
-        //     abort(404);
-        // }
-        return view('comic.show', compact('comics'));
-        
+        if($comic){
+ 
+            return view("comic.show", compact("comic"));
+ 
+        } else {
+             abort(404);
+        }
     }
 
     /**
