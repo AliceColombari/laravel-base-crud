@@ -30,16 +30,17 @@
                 <td>{{$comic->id}}</td>
                 <td>{{$comic->title}}</td>
                 <td>{{$comic->series}}</td>
-                <td>{{$comic->thumb}}</td>
+                <td><img src="{{$comic->thumb}}" alt="" style="height: 150px;"></td>
                 <td>{{$comic->type}}</td>
                 <td>{{$comic->sale_date}}</td>
                 <td>{{$comic->price}}</td>
                 {{-- <td>{{$comic->description}}</td> --}}
-                <td class="d-flex ms-3">
+                <td>
 
-                    <a role="button" class="btn btn-primary" href="{{route('comic.show', $comic->id)}}">Vedi</a>
-                    <a role="button" class="btn btn-warning" href="{{route('comic.edit', $comic->id)}}">Modifica</a>
-
+                    <a role="button" class="btn btn-primary" href="{{route('comic.show', $comic->id)}}" style="margin-bottom: 20px;">Vedi</a>
+                    
+                    <a role="button" class="btn btn-warning" href="{{route('comic.edit', $comic->id)}}" style="margin-bottom: 20px;">Modifica</a>
+                    
                     <form method="POST" action="{{route('comic.destroy', ['comic' => $comic->id])}}">
                       @csrf
                       @method('DELETE')
